@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var values=[1,2,3,4,5];
+	var sum = values.reduce(function(prev,cur,index,array){//（前一个值，当前值，项的索引，数组对象）
+		return prev+cur;
+	});
+	alert(sum);
+	//reduce():从数组第一项开始，逐个遍历到最后
+
+	var sum = values.reduceRight(function(prev,cur,index,array){
+		return prev+ cur;
+	});
+	alert(sum);
+	//reduceRight():从数组的最后一项开始，逐个遍历到第一项
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var now = new Date();//创建一个Date对象
+	//alert(now);
+	var someday = new Date(Date.parse("May 25,2014"));
+	
+	//Date.parse()方法接受一个表示日期的字符串参数，根据字符串返回相应日期毫秒数
+	 someday = new Date('May 25,2014');
+	alert(someday);
+	var day= new Date(Date.UTC(2016,2));//(年份，基于0的月份，月中哪一天(1-31)，小时数，分钟，秒，以及毫秒）
+	//alert(day);
+	//Date.parse() Date.UTC() 都是将当前输入日期返回日期毫秒数，但参数不同，
+	//Date.UTC()传的不是字符串
+	var start=Date.now();
+	var values=[1,2,3,4,5];
+	var product = values.reduce(function(prev,cur,index,array){
+		return prev*cur;
+	});
+	console.log(product);
+	var end = Date.now();//Date.now()调用这个方法时的日期和时间的毫秒数
+	console.log(end-start);
+</script>
+</body>
+</html>
