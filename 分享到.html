@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 300px;
+			background: #ccc;
+			position: fixed;
+			left: -200px;
+			top: 100px;
+		}
+		#div2{
+			width: 30px;
+			height: 100px;
+			background: #f00;
+			position: absolute;
+			right: -30px;
+			top: 100px;
+		}
+	</style>
+</head>
+<body style="height: 2000px;">
+	<div id="div1">
+		<div id="div2">
+			分享到
+		</div>
+	</div>
+	<script>
+		var timer;
+		function move(elem, target){
+			// var oDiv = document.getElementById('div1');
+			clearInterval(timer);
+			timer = setInterval(function(){
+				var speed = target - elem.offsetLeft < 0 ? -10 : 10;
+				if(  Math.abs(target-elem.offsetLeft) < Math.abs(speed)  ){
+					clearInterval(timer);
+					elem.style.left = target + 'px';
+				}else{
+					elem.style.left = elem.offsetLeft + speed + 'px';
+				}
+			}, 30);
+		}
+		var oDiv2 = document.getElementById('div2');
+		var oDiv1 = document.getElementById('div1');
+		oDiv1.onmouseover = function(){
+			move(oDiv1, 0);
+		};
+		oDiv1.onmouseout = function(){
+			move(oDiv1, -200);
+		};
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
